@@ -30,26 +30,20 @@
 # print(dir(list))
 # print(help(list.count))
 
-todos = []
-while True:
-    user_input = input("Select ADD,SHOW and EXIT: ")
-    user_input = user_input.lower()
-    match user_input:
-        case "add":
-            todo = input("Enter To Do: ")
-            todo = todo.capitalize()
-            todos.append(todo)
-        case "show":
-            for item in todos:
-                print(item)
-        case 'exit':
-            break
-        case whatever:
-            print("Unknown command")
-print("Goodbye!")
-
 # members = ["john", "sarah", "dora"]
 # for member in members:
 #     member = member.capitalize()
 #     print(member)
 
+# file_names = ['1.abc.txt', '2.qwe.txt', '3.wer.txt']
+# for filename in file_names:
+#     file_name = filename.replace('.', '-', 1)
+#     print(file_name)
+# file_names = ('1.abc.txt', '2.qwe.txt', '3.wer.txt')
+# print(type(file_names))
+
+contents = ['running race', 'car racing', 'boat racing']
+filenames = ['human.txt', 'landtransport.txt', 'watertransport.txt']
+for content, filename in zip(contents, filenames):
+    file = open(f"D_01/files/{filename}", 'w')
+    file.write(content)
