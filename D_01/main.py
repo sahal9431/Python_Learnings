@@ -42,8 +42,10 @@
 # file_names = ('1.abc.txt', '2.qwe.txt', '3.wer.txt')
 # print(type(file_names))
 
-contents = ['running race', 'car racing', 'boat racing']
-filenames = ['human.txt', 'landtransport.txt', 'watertransport.txt']
-for content, filename in zip(contents, filenames):
-    file = open(f"D_01/files/{filename}", 'w')
-    file.write(content)
+# contents = ['running race', 'car racing', 'boat racing']
+# filenames = ['human.txt', 'landtransport.txt', 'watertransport.txt']
+# for content, filename in zip(contents, filenames):
+#     file = open(f"D_01/files/{filename}", 'w')
+#     file.write(content)
+
+
