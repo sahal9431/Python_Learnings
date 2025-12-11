@@ -1,6 +1,6 @@
 #todos = []
 while True:
-    user_input = input("Select ADD,SHOW,edit,complete,remove or EXIT:")
+    user_input = input("Select ADD,SHOW,edit,complete or EXIT:")
     user_input = user_input.lower().strip() # Normalize input by converting to lowercase and removing extra spaces
 
     if user_input.startswith("add"): # Check if 'add' is in the input
@@ -26,7 +26,6 @@ while True:
         with open('todos.txt', 'w') as file: # Open file in write mode using context manager
             file.writelines(todos) # Write updated todos back to file
 
-    #case "show" | "display": #add multiple options
     elif "show" in user_input: # Check if 'show' is in the input
         file = open('todos.txt', 'r')
         todos = file.readlines()
@@ -46,40 +45,47 @@ while True:
             print(f"{index + 1}-{item}") # f-string formatting
 
     elif "edit" in user_input: # Check if 'edit' is in the input
-        #number = int(input("number of to todo to edit: "))
-        number = int(user_input[5:]) # Extract number from input string
-        number = number - 1 # Convert to zero-based index
+        try:
+            #number = int(input("number of to todo to edit: "))
+            number = int(user_input[5:]) # Extract number from input string
+            number = number - 1 # Convert to zero-based index
 
-        with open('todos.txt', 'r') as file: # Open file using context manager
-            todos = file.readlines() # Read existing todos
+            with open('todos.txt', 'r') as file: # Open file using context manager
+                todos = file.readlines() # Read existing todos
 
-        new_todo = input("Enter new todo: ") # Get new todo from user
-        new_todo = new_todo.title() # Capitalize new todo
+            new_todo = input("Enter new todo: ") # Get new todo from user
+            new_todo = new_todo.title() # Capitalize new todo
 
-        todos[number] = new_todo # Update the todo at the specified index
+            todos[number] = new_todo # Update the todo at the specified index
 
-        with open('todos.txt', 'w') as file: # Open file in write mode using context manager
-            file.writelines(todos) # Write updated todos back to file
-            
+            with open('todos.txt', 'w') as file: # Open file in write mode using context manager
+                file.writelines(todos) # Write updated todos back to file
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+            continue
+
     elif "exit" in user_input: # Check if 'exit' is in the input
         break
 
-    elif "complete" in user_input or "remove" in user_input: # Check if 'complete' is in the input
-        #number = int(input("number of to todo to complete: "))
-        number = int(user_input[9:]) # Extract number from input string
+    elif "complete" in user_input or "remove" in user_input: # Check if 'complete' or 'Remove' is in the input
+        try:
+            #number = int(input("number of to todo to complete: "))
+            number = int(user_input[9:]) # Extract number from input string
 
-        with open('todos.txt', 'r') as file: # Open file using context manager
-            todos = file.readlines() # Read existing todos
+            with open('todos.txt', 'r') as file: # Open file using context manager
+                todos = file.readlines() # Read existing todos
 
-        number = number - 1 # Convert to zero-based index
-        todo_to_remove = todos[number].strip('\n') # Get the todo to be removed and strip newline
-        todos.pop(number) # Remove the todo at the specified index
+            number = number - 1 # Convert to zero-based index
+            todo_to_remove = todos[number].strip('\n') # Get the todo to be removed and strip newline
+            todos.pop(number) # Remove the todo at the specified index
 
-        with open('todos.txt', 'w') as file: # Open file in write mode using context manager
-            file.writelines(todos) # Write updated todos back to file
-        
-        print(f"Todo '{todo_to_remove}' completed and removed from the list.")
-        
+            with open('todos.txt', 'w') as file: # Open file in write mode using context manager
+                file.writelines(todos) # Write updated todos back to file
+            
+            print(f"Todo '{todo_to_remove}' completed and removed from the list.")
+        except IndexError:
+            print("Invalid todo number. Please try again.")
+            continue
     else:
         print("Command not recognized.")
 
