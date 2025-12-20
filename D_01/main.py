@@ -81,4 +81,58 @@
 # }
 # print("username" in user)
 
+# def get_average():
+#     with open('source.txt', 'r') as file:
+#         numbers = file.readlines()
+#     values = numbers[1:]
+#     values = [float(i) for i in values]
+#     print(values)
+#     average_local = sum(values) / len(values)
+#     return average_local
 
+# average = get_average()
+# print(average)
+
+# def get_max():
+#     grades = [9.6, 9.2, 9.7]
+#     maximum = float(max(grades))
+#     minimum = float(min(grades))
+#     print(f"Max:{maximum}, Min:{minimum}")
+#     return maximum, minimum
+
+# get_max()
+
+# def format_filename():
+#     filename = "report.txt"
+#     filename = filename[:-4].capitalize()
+#     print(filename)
+#     return filename
+    
+# format_filename()
+
+# def square_number():
+#     number = 5
+#     number = number * 5
+#     print(number)
+#     return number
+
+# square_number()
+
+#Decoupling
+# feet_inches = input("Enter feet and inches separated by space: ")
+
+# def converstion(feet_inches):
+#     feet, inches = feet_inches.split() # Split input into feet and inches
+#     feet = float(feet) # Convert feet to float
+#     inches = float(inches) # Convert inches to float
+#     total_inches = (feet * 12) + inches # Calculate total inches
+#     cm = total_inches * 2.54 # Convert inches to centimeters
+#     print(f"{feet} feet and {inches} inches equal to {cm} cm") # Print result
+#     return
+
+# converstion(feet_inches)
+
+# def foo(name):
+#     """Returns a greeting message for the given name."""
+#     return f"Hi {name}"
+# foo("sanju")
