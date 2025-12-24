@@ -118,7 +118,7 @@
 
 # square_number()
 
-#Decoupling
+#Decoupling is the process of splitting function to reduce dependencies between them.
 # feet_inches = input("Enter feet and inches separated by space: ")
 
 # def converstion(feet_inches):
@@ -136,3 +136,55 @@
 #     """Returns a greeting message for the given name."""
 #     return f"Hi {name}"
 # foo("sanju")
+
+#glob modules defenition is used to define variables that can be used across multiple functions within the same module.
+# import glob
+
+# myfiles = glob.glob("D_01/files/*.txt")
+# print(myfiles)
+
+# import csv
+# # csv definition is used to read and write data in CSV (Comma Separated Values) format.
+
+# import shutil
+# # shutil definition is used for high-level file operations such as copying and moving files and directories.
+# shutil.make_archive('output', 'zip', 'D_01/files') # Create a zip archive of the 'files' directory named 'output.zip'
+
+# import webbrowser
+# # webbrowser definition is used to open web pages in the default web browser.
+# webbrowser.open('https://www.google.com') # Open Google in the default web browser
+
+# a = [{"Question": "what are dolphins", "Options": ["Amphibians", "Mammals", "Reptiles"], "Answer": "2"}, 
+#      {"Question": "what are elephants", "Options": ["Amphibians", "Mammals", "Reptiles"], "Answer": "1"}]
+
+# import json
+# with open('D_01/questions.json', 'r') as file:
+#     question = file.read()
+
+# data = json.loads(question)
+# score = 0
+# for question in data:
+#     print(question["Question"])
+#     for index, option in enumerate(question["Options"]):
+#         print(index + 1, "-", option)
+#     answer = input("Enter your answer (1/2/3): ")
+#     question["answer"] = answer
+#     print(question["answer"])
+#     if question["answer"] == question["Answer"]:
+#         score += 1
+#         #print(f"Your score is: {score}/{len(data)}")
+# for index, question in enumerate(data):
+#     message = f'{index + 1} - "Your answer:" {question["answer"]}, \
+#     "Correct answer:" {question["Answer"]}'
+#     print(message)
+# print(f"Your score is: {score}/{len(data)}")
+
+# import random
+# number_1 = input("Enter first number: ")
+# number_2 = input("Enter second number: ")
+
+# randum_number = random.randint(int(number_1), int(number_2)) # Generate random number between number_1 and number_2
+# print(randum_number)
+
+
+

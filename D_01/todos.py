@@ -1,14 +1,8 @@
-def get_todos(file_path = 'todos.txt'): # Function to read todos from file 
-    with open(file_path, 'r') as file:
-        todos_local = file.readlines()
-    return todos_local # Return the list of todos
+from functions import get_todos, write_todos
+import time
 
-
-def write_todos(todos_arg, filepath= 'todos.txt'): # Function to write todos to file
-    with open(filepath, 'w') as file:
-        file.writelines(todos_arg)
-
-
+now = time.strftime("%b %d, %Y %H:%M:%S")
+print("It is", now)
 #todos = []
 while True:
     user_input = input("Select Add,Show,Edit,Remove or Exit:")
