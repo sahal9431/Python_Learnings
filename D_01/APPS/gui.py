@@ -1,4 +1,4 @@
-import functions
+import D_01.TO_DO.functions as functions
 import FreeSimpleGUI as lm
 
 label = lm.Text("Type a TO_DO")
@@ -7,6 +7,6 @@ add_button = lm.Button('Add')
 edit_button = lm.Button('Edit')
 remove_button = lm.Button('Remove')
 
-window = lm.Window('My T0-Do App', layout=[[label], [input_box, add_button], [edit_button, remove_button] ])
+window = lm.Window('My T0-Do App', layout=[[label], [input_box, add_button], [edit_button, remove_button]])
 window.read()
 window.close()

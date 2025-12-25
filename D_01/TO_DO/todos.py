@@ -1,4 +1,4 @@
-from functions import get_todos, write_todos
+import functions
 import time
 
 now = time.strftime("%b %d, %Y %H:%M:%S")
@@ -19,7 +19,7 @@ while True:
         #Option_2: # With file handling
         # with open('todos.txt', 'r') as file: # Open file using context manager
         #     todos = file.readlines() # Read existing todos
-        todos = get_todos() # Get existing todos using function
+        todos = functions.get_todos() # Get existing todos using function
 
         todos.append(todo) # Add new todo to list
 
@@ -31,7 +31,7 @@ while True:
         #Option_2:
         # with open('todos.txt', 'w') as file: # Open file in write mode using context manager
         #     file.writelines(todos) # Write updated todos back to file
-        write_todos(filepath='todos.txt', todos_arg=todos) # Write updated todos using function
+        functions.write_todos(filepath='todos.txt', todos_arg=todos) # Write updated todos using function
 
     elif "show" in user_input: # Check if 'show' is in the input
         file = open('todos.txt', 'r')
@@ -59,7 +59,7 @@ while True:
 
             # with open('todos.txt', 'r') as file: # Open file using context manager
             #     todos = file.readlines() # Read existing todos
-            todos = get_todos() # Get existing todos using function
+            todos = functions.get_todos() # Get existing todos using function
 
             new_todo = input("Enter new todo: ") # Get new todo from user
             new_todo = new_todo.title() # Capitalize new todo
@@ -68,7 +68,7 @@ while True:
 
             # with open('todos.txt', 'w') as file: # Open file in write mode using context manager
             #     file.writelines(todos) # Write updated todos back to file
-            write_todos(filepath='todos.txt', todos_arg=todos) # Write updated todos using function
+            functions.write_todos(filepath='todos.txt', todos_arg=todos) # Write updated todos using function
         except ValueError:
             print("Invalid input. Please enter a valid number.")
             continue
@@ -83,7 +83,7 @@ while True:
 
             # with open('todos.txt', 'r') as file: # Open file using context manager
             #     todos = file.readlines() # Read existing todos
-            todos = get_todos() # Get existing todos using function
+            todos = functions.get_todos() # Get existing todos using function
 
             number = number - 1 # Convert to zero-based index
             todo_to_remove = todos[number].strip('\n') # Get the todo to be removed and strip newline
@@ -91,7 +91,7 @@ while True:
 
             # with open('todos.txt', 'w') as file: # Open file in write mode using context manager
             #     file.writelines(todos) # Write updated todos back to file
-            write_todos(filepath='todos.txt', todos_arg=todos) # Write updated todos using function
+            functions.write_todos(filepath='todos.txt', todos_arg=todos) # Write updated todos using function
             
             print(f"Todo '{todo_to_remove}' removed from the list.")
         except IndexError:
