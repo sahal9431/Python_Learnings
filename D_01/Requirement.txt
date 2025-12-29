@@ -1,0 +1,3 @@
+To create app on lacal machine
+create venv by runnin - Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+Then - pyinstaller --onefile --windowed --clean to_do_app.py
