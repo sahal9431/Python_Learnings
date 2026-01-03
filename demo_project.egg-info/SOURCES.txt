@@ -1,0 +1,14 @@
+setup.py
+D_01/__init__.py
+D_01/APPS/__init__.py
+D_01/APPS/compression_app.py
+D_01/APPS/feet_meter_con.py
+D_01/APPS/to_do_app.py
+D_01/to_do/__init__.py
+D_01/to_do/functions.py
+D_01/to_do/todos.py
+D_01/to_do/zip_file_creator.py
+demo_project.egg-info/PKG-INFO
+demo_project.egg-info/SOURCES.txt
+demo_project.egg-info/dependency_links.txt
+demo_project.egg-info/top_level.txt
